@@ -1,0 +1,48 @@
+<!-- Create an HTML page with a form. The form should include inputs for a username, email, and password as well as a submit button.
+	In a Javascript file, write code that does the following things:
+	checks that the password is 12345678
+	checks that the username contains at least one number
+	if anything is wrong, send an alert message saying "incorrect"
+Your page should also include an H1 tag. If the information in the form is correct, have Javascript change the text in the H1. -->
+<html>
+	<body>
+		<H1 id="js-h1">This is a form</h1>
+		<form onsubmit="formValidation()" method="post">
+			<label for ="email">Email</label>
+			<input type="text" name="email" placeholder="@email.com" id="js-email">
+			<label for ="username">Username</label>
+			<input type="text" name="username" placeholder="your name" id="js-username">
+			<label for ="password">Password</label>
+			<input type="text" placeholder="Enter '12345678'" name="password" id="js-password">
+			<input type="submit" value="Submit" id="id-submit">		
+		</form>
+
+		<script type="text/javascript">
+			function formValidation(){
+				var userEmail=document.getElementById('js-email').value;
+				var userName = document.getElementById('js-username').value;
+				var userPassword = document.getElementById('js-password').value;
+				
+				if (userEmail===null || userEmail==="") {
+					alert("Email must be filled out");
+					}
+
+				
+				if (!/^[a-zA-Z]*$/g.test(userName.value)) {
+				     alert("username must be letter only");
+				    }
+
+			    if (userPassword===null || userPassword !=12345678){
+		    		alert ("password must be '12345678'");
+		   			}
+		   		} 
+			
+	
+			if (formValidation === false) {
+				document.getElementById('js-h1').InnerHTML="You've entered incorrect information in the form below";
+				}
+		</script>	
+	</body>
+</html>
+
+

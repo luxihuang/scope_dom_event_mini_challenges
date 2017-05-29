@@ -1,0 +1,21 @@
+<!-- Create an HTML page with two buttons that argue with each other. When one button is clicked, the text "I'm right" should be placed next to it. When the other button is clicked, the text is replaced with, "No, I'm right!” -->
+
+<html>
+	<body>
+		
+		<Button id="button1" onclick="clickOne()">Button1 </button>
+		<Button id="button2" onclick="clickTwo()">Button2</button>
+	
+		<script type ="text/javascript">
+			function clickOne() {
+				document.getElementById("button1").innerHTML= "I'm right";
+				}
+
+			function clickTwo() {
+				document.getElementById("button2").innerHTML= "No, I'm right!";
+				}
+		</script>
+	</body>
+</html>
+
+
